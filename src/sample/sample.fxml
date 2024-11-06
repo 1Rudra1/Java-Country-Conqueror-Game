@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints maxWidth="359.0" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints maxWidth="905.0" minWidth="546.0" prefWidth="905.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints maxHeight="950.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+   </rowConstraints>
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1009.0" prefWidth="905.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <children>
+            <Label fx:id="lblTitle" layoutX="366.0" layoutY="113.0" text="Country Conqueror" textAlignment="CENTER" textFill="#b22c2c" textOverrun="CENTER_ELLIPSIS" underline="true">
+               <effect>
+                  <Glow>
+                     <input>
+                        <Bloom />
+                     </input>
+                  </Glow>
+               </effect>
+               <font>
+                  <Font name="Avenir Next Bold" size="18.0" />
+               </font>
+            </Label>
+            <ListView fx:id="lstCountries" layoutX="361.0" layoutY="282.0" onMouseClicked="#Stats" prefHeight="264.0" prefWidth="201.0" />
+            <Label fx:id="lblCountryTitle" layoutX="390.0" layoutY="254.0" text="Countries To Conquer" underline="true">
+               <font>
+                  <Font name="Avenir Next Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnRetreat" layoutX="575.0" layoutY="356.0" mnemonicParsing="false" onAction="#Retreat" text="Retreat" />
+            <Button fx:id="btnRound" layoutX="271.0" layoutY="356.0" mnemonicParsing="false" onAction="#Rounds" text="Next Round" />
+            <Label layoutX="25.0" layoutY="213.0" text="Amount Of  Player Troops:" underline="true">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label layoutX="45.0" layoutY="248.0" text="Soldiers:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="53.0" layoutY="276.0" text="Tanks:">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="lblNumSoldiers" layoutX="115.0" layoutY="248.0" text="Soldiers">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="lblNumTanks" layoutX="115.0" layoutY="276.0" text="Tanks">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label layoutX="13.0" layoutY="139.0" text="Player Gold Amount" underline="true">
+               <font>
+                  <Font name="Baskerville" size="14.0" />
+               </font></Label>
+            <Label fx:id="lblGold" layoutX="51.0" layoutY="162.0" text="Gold" />
+            <Line endX="100.0" layoutX="64.0" layoutY="191.0" startX="-64.0000228881836" />
+            <Line endX="90.5" endY="-9.5" layoutX="74.0" layoutY="201.0" startX="276.5" startY="-53.49998474121094" />
+            <Line endX="100.0" layoutX="450.0" layoutY="148.0" startX="-99.0" />
+            <Line endX="59.1214599609375" endY="44.499855041503906" layoutX="646.0" layoutY="148.0" startX="-100.0" />
+            <Line endX="100.50006103515625" layoutX="805.0" layoutY="193.0" startX="-100.0" />
+            <Separator layoutX="254.0" layoutY="174.0" orientation="VERTICAL" prefHeight="388.0" prefWidth="6.0" />
+            <Separator layoutX="649.0" layoutY="179.0" orientation="VERTICAL" prefHeight="380.0" prefWidth="6.0" />
+            <Separator layoutX="348.0" layoutY="79.0" orientation="VERTICAL" prefHeight="68.0" prefWidth="0.0" />
+            <Separator layoutX="548.0" layoutY="79.0" orientation="VERTICAL" prefHeight="68.0" prefWidth="0.0" />
+            <Label layoutX="726.0" layoutY="140.0" text="Enemy Gold Amount" underline="true">
+               <font>
+                  <Font name="Baskerville" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblEnemyGold" layoutX="774.0" layoutY="167.0" text="Gold" />
+            <Button fx:id="btnAttack" layoutX="285.0" layoutY="319.0" mnemonicParsing="false" onAction="#Attack" text="Attack" />
+            <Label layoutX="328.0" layoutY="191.0" prefHeight="27.0" prefWidth="139.0" text="Total Player Casulaties:">
+               <font>
+                  <Font name="Apple Chancery" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="328.0" layoutY="223.0" text="Total Enemy Casulaties:">
+               <font>
+                  <Font name="Apple Chancery" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNumCas" layoutX="478.0" layoutY="196.0" prefHeight="18.0" prefWidth="155.0" text="?">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNumEnemyCas" layoutX="478.0" layoutY="226.0" prefHeight="18.0" prefWidth="160.0" text="?">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblResult" alignment="CENTER" layoutX="273.0" layoutY="155.0" prefHeight="39.0" prefWidth="360.0" text="Result:">
+               <font>
+                  <Font name="Menlo Regular" size="16.0" />
+               </font>
+            </Label>
+            <ListView fx:id="lstConquered" layoutX="23.0" layoutY="604.0" prefHeight="200.0" prefWidth="221.0" />
+            <Label layoutX="63.0" layoutY="569.0" text="Conquered Contries" underline="true">
+               <font>
+                  <Font name="Avenir Next Bold" size="13.0" />
+               </font>
+            </Label>
+            <ListView fx:id="lstBattleStats" layoutX="645.0" layoutY="597.0" prefHeight="200.0" prefWidth="245.0" />
+            <Label layoutX="725.0" layoutY="569.0" text="Battle Statistics" underline="true">
+               <font>
+                  <Font name="Avenir Next Bold" size="13.0" />
+               </font>
+            </Label>
+            <ListView fx:id="lstShop" layoutX="360.0" layoutY="598.0" onMouseClicked="#Description" prefHeight="200.0" prefWidth="200.0" />
+            <Label fx:id="lblShopTitle" layoutX="437.0" layoutY="567.0" text="Shop" underline="true">
+               <font>
+                  <Font name="Avenir Next Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNumTroops" layoutX="15.0" layoutY="426.0" promptText="Enter Number Of Troops" />
+            <Separator layoutX="9.0" layoutY="560.0" prefHeight="1.0" prefWidth="246.0" />
+            <Separator layoutX="258.0" layoutY="561.0" prefHeight="1.0" prefWidth="391.0" />
+            <Separator layoutX="650.0" layoutY="562.0" prefHeight="3.0" prefWidth="246.0" />
+            <ImageView fx:id="imageView" fitHeight="249.0" fitWidth="245.0" layoutX="655.0" layoutY="300.0" pickOnBounds="true" />
+            <Button layoutX="517.0" layoutY="809.0" mnemonicParsing="false" onAction="#Shop" text="Purchase" />
+            <Label fx:id="lblDescription" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="218.0" layoutY="850.0" prefHeight="68.0" prefWidth="488.0" text="                                                            Description Of Item" />
+            <TextField fx:id="txtNumGold" layoutX="340.0" layoutY="809.0" promptText="Enter Payment of Gold" />
+            <Label layoutX="44.0" layoutY="843.0" text="Player Land Amount" underline="true">
+               <font>
+                  <Font name="Baskerville" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblLand" layoutX="80.0" layoutY="862.0" text="Land" />
+            <Line endX="8.0" endY="20.5" layoutX="172.0" layoutY="810.0" startX="-173.0" startY="20.5" />
+            <Line endX="-101.5" endY="-47.0" layoutX="282.0" layoutY="878.0" startX="-57.457061767578125" startY="51.7928466796875" />
+            <Label layoutX="752.0" layoutY="845.0" text="Enemy Land Amount" underline="true">
+               <font>
+                  <Font name="Baskerville" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblEnemyLand" layoutX="796.0" layoutY="862.0" text="Land" />
+            <Line endX="8.0" endY="20.5" layoutX="893.0" layoutY="815.0" startX="-173.0" startY="20.5" />
+            <Line endX="160.5" endY="-43.0" layoutX="559.0" layoutY="879.0" startX="104.43292236328125" startY="52.20709228515625" />
+            <Line endX="-100.70713806152344" endY="-50.792877197265625" layoutX="100.0" layoutY="131.0" startX="-100.0000228881836" startY="797.4293212890625" />
+            <Line endX="785.7722778320312" endY="2.49993896484375" layoutX="119.0" layoutY="928.0" startX="-119.00001525878906" startY="2.5" />
+            <Line endX="178.0" endY="-346.5" layoutX="727.0" layoutY="426.0" startX="178.0" startY="503.5" />
+            <Polyline fill="#d33368" layoutX="230.0" layoutY="116.0" strokeType="INSIDE">
+              <points>
+                <Double fx:value="-50.0" />
+                <Double fx:value="-40.0" />
+                <Double fx:value="50.0" />
+                <Double fx:value="-40.0" />
+                <Double fx:value="0.0" />
+                <Double fx:value="60.0" />
+                <Double fx:value="-50.0" />
+                <Double fx:value="-40.0" />
+              </points>
+            </Polyline>
+            <Polyline fill="#d33368" layoutX="649.0" layoutY="116.0" strokeType="INSIDE">
+               <points>
+                  <Double fx:value="-50.0" />
+                  <Double fx:value="-40.0" />
+                  <Double fx:value="50.0" />
+                  <Double fx:value="-40.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="60.0" />
+                  <Double fx:value="-50.0" />
+                  <Double fx:value="-40.0" />
+               </points>
+            </Polyline>
+            <Polyline fill="#2e00ff" layoutX="43.0" layoutY="116.0" points="-50.0, -40.0, 50.0, -40.0, -50.0, 30.5, -50.0, -40.0" strokeType="INSIDE" />
+            <Polyline fill="#2e00ff" layoutX="50.0" layoutY="900.0" points="-50.0, -40.0, -50.0, 3.5, -50.0, 30.5, 40.0, 30.5" strokeType="INSIDE" />
+            <Polyline fill="#2e00ff" layoutX="825.0" layoutY="119.0" points="46.0, 4.5, -11.0, -40.0, 82.0, -40.0, 82.0, 35.5" strokeType="INSIDE" />
+            <Polyline fill="#2e00ff" layoutX="829.0" layoutY="895.0" points="50.0, 35.5, -12.0, 35.5, 75.7723388671875, -37.0953369140625, 75.7723388671875, 35.5" strokeType="INSIDE" />
+            <Line endX="579.0" endY="-48.49999237060547" layoutX="326.0" layoutY="128.0" startX="-326.0000305175781" startY="-48.5" />
+            <Label fx:id="lblTypeOfTroop" layoutX="16.0" layoutY="396.0" text="Number Of Soldiers To Attack With:" underline="true">
+               <font>
+                  <Font name="Avenir Next Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="184.0" layoutY="426.0" mnemonicParsing="false" onAction="#FightingTroops" text="Sumbit" />
+            <Label layoutX="34.0" layoutY="470.0" text="Soldiers Chosen To Attack:">
+               <font>
+                  <Font name="Baskerville" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="499.0" text="Tanks Chosen To Attack:">
+               <font>
+                  <Font name="Baskerville" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblAttackSoldiers" layoutX="207.0" layoutY="470.0" text="?">
+               <font>
+                  <Font name="Baskerville" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblAttackTanks" layoutX="199.0" layoutY="499.0" text="?">
+               <font>
+                  <Font name="Baskerville" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnAttackAll" layoutX="13.0" layoutY="319.0" mnemonicParsing="false" onAction="#AttackAll" prefHeight="27.0" prefWidth="229.0" text="Attack With All Troops" />
+            <Label layoutX="698.0" layoutY="216.0" text="Amount Of  Player Troops:" underline="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="725.0" layoutY="244.0" text="Soldiers:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="733.0" layoutY="272.0" text="Tanks:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNumEnemySoldiers" layoutX="795.0" layoutY="244.0" text="Soldiers">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNumEnemyTanks" layoutX="795.0" layoutY="272.0" text="Tanks">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="118.0" layoutY="884.0" text="Total Prisoners" underline="true" />
+            <Label fx:id="lblPrisoners" layoutX="138.0" layoutY="907.0" text="Prisoners" />
+            <Button fx:id="btnRestart" layoutX="406.0" layoutY="86.0" mnemonicParsing="false" onAction="#Restart" text="RESTART" />
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
